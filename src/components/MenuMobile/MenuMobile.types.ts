@@ -1,9 +1,11 @@
 export type MenuMobileProps = {
-  categories: Categories[];
+  categories: Navbar[];
 };
 
-type Categories = {
+export type Navbar = {
   id: number;
-  link: string;
-  label: string;
+  attributes: {
+    name: string;
+    slug: string;
+  };
 };
