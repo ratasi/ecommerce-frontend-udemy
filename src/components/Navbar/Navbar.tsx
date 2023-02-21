@@ -1,37 +1,20 @@
+import { useGetCategoriesApi } from '@/api/categories';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { Container, Icon, Menu } from 'semantic-ui-react';
 import MenuMobile from '../MenuMobile';
 import * as S from './Navbar.styles';
+import { Navbar, NavbarProps } from './Navbar.types';
 
-const dataNavbar = [
-    {
-        id: 1,
-        label: "Home",
-        link: "/"
-    },
-    {
-        id: 2,
-        label: "Categories",
-        link: "/categories"
-    },
-    {
-        id: 3,
-        label: "Contacto",
-        link: "/contacto"
-    },
-    {
-        id: 4,
-        label: "Carrito",
-        link: "/carrito"
-    },
-]
 
 const Navbar = () => {
     const [activeMenu, setActiveMenu] = useState('');
     const [showMenuBurguerMobile, setShowMenuBurguerMobile] = useState(false);
     const router = useRouter();
+    const { result }: NavbarProps = useGetCategoriesApi()
+    if (result === null) return null;
+    const dataCategories = result.data;
 
     const onClickItemMenu = (slug: string) => {
         setActiveMenu(slug);
@@ -47,8 +30,8 @@ const Navbar = () => {
                         <span>TarreDev</span>
                     </S.ContainerLogo>
                     <S.ContainerMenuDesktop position="right">
-                        {dataNavbar.map((data) => (
-                            <Menu.Item name={data.label} key={data.id} onClick={() => onClickItemMenu(data.link)} active={activeMenu === data.label} />
+                        {dataCategories.map((data: Navbar) => (
+                            <Menu.Item key={data.id} name={data.attributes.name} onClick={() => onClickItemMenu(data.attributes.slug)} active={activeMenu === data.attributes.name} />
                         ))}
                     </S.ContainerMenuDesktop>
 
@@ -57,7 +40,7 @@ const Navbar = () => {
                     </S.ContainerBurguerMenu>
                 </Menu>
                 {showMenuBurguerMobile && (
-                    <MenuMobile categories={dataNavbar} />
+                    <MenuMobile categories={dataCategories} />
                 )}
             </Container>
         </S.ContainerNavbar>
