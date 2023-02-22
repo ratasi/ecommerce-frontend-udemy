@@ -1,3 +1,4 @@
+import { media } from "@/styles/media";
 import styled from "@emotion/styled";
 import Link from "next/link";
 import { MenuItem, MenuMenu } from "semantic-ui-react";
@@ -27,7 +28,7 @@ export const ContainerLogo = styled(Link)`
 export const ContainerMenuDesktop = styled(MenuMenu)`
   display: none !important;
 
-  @media (min-width: 768px) {
+  ${media.greatherThanM} {
     display: flex !important;
   }
 `;
@@ -42,7 +43,7 @@ export const ContainerBurguerMenu = styled(MenuItem)`
     display: contents;
   }
 
-  @media (min-width: 768px) {
+  ${media.greatherThanM} {
     display: none !important;
   }
 `;
