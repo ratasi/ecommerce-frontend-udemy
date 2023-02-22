@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Menu } from 'semantic-ui-react';
+import { Icon, Menu } from 'semantic-ui-react';
 import * as S from './MenuMobile.styles'
 import { MenuMobileProps } from './MenuMobile.types'
 
@@ -13,6 +13,9 @@ const MenuMobile = (props: MenuMobileProps) => {
                     <Menu.Item name={category.attributes.name} />
                 </Link>
             ))}
+            <Menu.Item href="/checkout">
+                Carrito <Icon name="shopping cart" />
+            </Menu.Item>
         </S.ContainerMobileItems>
     )
 }
