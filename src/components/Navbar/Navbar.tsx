@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Container, Icon, Menu } from 'semantic-ui-react';
 import MenuMobile from '../MenuMobile';
 import * as S from './Navbar.styles';
-import { Navbar, NavbarProps } from './Navbar.types';
+import { NavbarData, NavbarProps } from './Navbar.types';
 
 
 const Navbar = () => {
@@ -30,9 +30,12 @@ const Navbar = () => {
                         <span>TarreDev</span>
                     </S.ContainerLogo>
                     <S.ContainerMenuDesktop position="right">
-                        {dataCategories.map((data: Navbar) => (
+                        {dataCategories.map((data: NavbarData) => (
                             <Menu.Item key={data.id} name={data.attributes.name} onClick={() => onClickItemMenu(data.attributes.slug)} active={activeMenu === data.attributes.name} />
                         ))}
+                        <Menu.Item href="/checkout">
+                            <Icon name="shopping cart" />
+                        </Menu.Item>
                     </S.ContainerMenuDesktop>
 
                     <S.ContainerBurguerMenu position='right' onClick={() => setShowMenuBurguerMobile(!showMenuBurguerMobile)}>

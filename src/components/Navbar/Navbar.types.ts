@@ -3,10 +3,10 @@ export type NavbarProps = {
 };
 
 type NavbarResponse = {
-  data: Navbar[];
+  data: NavbarData[];
 };
 
-export type Navbar = {
+export type NavbarData = {
   id: number;
   attributes: {
     name: string;
