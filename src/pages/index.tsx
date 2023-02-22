@@ -1,9 +1,9 @@
-import { Header } from 'semantic-ui-react'
+import HomePage from '@/components/Page/Home/Home'
 
 export default function Home() {
   return (
     <>
-      <Header as='h1'>First Header Prueba</Header>
+      <HomePage />
     </>
   )
 }
