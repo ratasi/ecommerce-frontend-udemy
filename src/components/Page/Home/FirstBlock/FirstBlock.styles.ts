@@ -1,3 +1,4 @@
+import { colors } from "@/styles/color";
 import { media } from "@/styles/media";
 import styled from "@emotion/styled";
 import Image from "next/image";
@@ -17,11 +18,7 @@ export const Title = styled(Header)`
   font-weight: 700;
 
   span {
-    background-image: linear-gradient(
-      90deg,
-      rgba(131, 58, 180, 0.9) 0%,
-      rgba(253, 29, 29, 0.9) 100%
-    );
+    background-image: ${colors.gradientPrimary};
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -37,12 +34,7 @@ export const SubHeader = styled(HeaderSubheader)`
   margin: 20px 0 30px 0;
 
   span {
-    background-image: linear-gradient(
-      to right,
-      rgb(134, 239, 172),
-      rgb(59, 130, 246),
-      rgb(147, 51, 234)
-    );
+    background-image: ${colors.gradientSecondary};
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -51,11 +43,7 @@ export const SubHeader = styled(HeaderSubheader)`
 
 export const LinkShop = styled(Link)`
   display: inline-block;
-  background: linear-gradient(
-    90deg,
-    rgba(131, 58, 180, 0.9) 0%,
-    rgba(253, 29, 29, 0.9) 100%
-  );
+  background: ${colors.gradientPrimary};
   color: #fff;
   font-size: 1.25rem;
   padding: 10px 20px;
