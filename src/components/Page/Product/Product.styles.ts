@@ -1,3 +1,4 @@
+import { colors } from "@/styles/color";
 import { media } from "@/styles/media";
 import styled from "@emotion/styled";
 
@@ -23,4 +24,12 @@ export const InfoProduct = styled.div`
 export const Description = styled.p`
   font-size: 20px;
   margin: 20px 0 !important;
+`;
+
+export const TitleProduct = styled.h1`
+  font-size: 50px;
+  color: transparent;
+  background-image: ${colors.gradientPrimary};
+  background-clip: text;
+  -webkit-background-clip: text;
 `;
