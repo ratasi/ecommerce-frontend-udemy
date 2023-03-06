@@ -2,6 +2,7 @@ import Container from '@/components/Container';
 import Image from 'next/image';
 import { Grid, Header } from 'semantic-ui-react';
 import BreadCrumb from './BreadCrumb';
+import Features from './Features';
 import * as S from './Product.styles'
 import { ProductPageProps } from './Product.types';
 
@@ -29,7 +30,8 @@ const Product = (props: ProductPageProps) => {
                             <BreadCrumb productName={attributes.name} categoryName={dataCategory} />
                             <Header size="huge" as="h1">{attributes.name}</Header>
                             <Header size="large">{attributes.price} €</Header>
-
+                            <S.Description>{attributes.description}</S.Description>
+                            <Features />
                         </S.InfoProduct>
                     </Grid.Column>
                 </Grid>

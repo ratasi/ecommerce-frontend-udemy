@@ -12,7 +12,6 @@ const BreadCrumb = (props: BreadCrumbProps) => {
             <Breadcrumb.Section>{categoryName}</Breadcrumb.Section>
             <Breadcrumb.Divider />
             <Breadcrumb.Section active>{productName}</Breadcrumb.Section>
-
         </Breadcrumb>
     )
 }
