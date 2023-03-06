@@ -5,6 +5,7 @@ import BreadCrumb from './BreadCrumb';
 import Features from './Features';
 import * as S from './Product.styles'
 import { ProductPageProps } from './Product.types';
+import QuantityCart from './QuantityCart';
 
 const Product = (props: ProductPageProps) => {
     const { product } = props;
@@ -28,10 +29,11 @@ const Product = (props: ProductPageProps) => {
                     <Grid.Column>
                         <S.InfoProduct>
                             <BreadCrumb productName={attributes.name} categoryName={dataCategory} />
-                            <Header size="huge" as="h1">{attributes.name}</Header>
+                            <S.TitleProduct>{attributes.name}</S.TitleProduct>
                             <Header size="large">{attributes.price} €</Header>
                             <S.Description>{attributes.description}</S.Description>
                             <Features />
+                            <QuantityCart product={product} />
                         </S.InfoProduct>
                     </Grid.Column>
                 </Grid>
