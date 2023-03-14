@@ -7,7 +7,6 @@ import { CategoryPageProps } from './Category.types'
 const CategoryPage = (props: CategoryPageProps) => {
     const { data } = props;
     const { name, products, slug } = data;
-    console.log(data);
 
     return (
         <S.ContainerCategory>
